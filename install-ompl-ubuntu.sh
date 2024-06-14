@@ -61,6 +61,7 @@ install_app_dependencies()
             cd fcl-0.6.1; cmake .; ${SUDO} -E make install; cd ..
         fi
     fi
+    pip install pygccxml==2.1.0 --force-reinstall
 }
 
 install_ompl()
@@ -72,10 +73,10 @@ install_ompl()
     fi
     if [ -z $GITHUB ]; then
         if [ -z $APP]; then
-            wget -O - https://github.com/ompl/${OMPL}/archive/1.6.0.tar.gz | tar zxf -
+            # wget -O - https://github.com/ompl/${OMPL}/archive/1.6.0.tar.gz | tar zxf -
             cd ${OMPL}-1.6.0
         else
-            wget -O - https://github.com/ompl/${OMPL}/releases/download/1.6.0/${OMPL}-1.6.0-Source.tar.gz | tar zxf -
+            # wget -O - https://github.com/ompl/${OMPL}/releases/download/1.6.0/${OMPL}-1.6.0-Source.tar.gz | tar zxf -
             cd $OMPL-1.6.0-Source
         fi
     else
